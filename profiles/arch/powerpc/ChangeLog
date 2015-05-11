@@ -1,6 +1,24 @@
 # ChangeLog for Gentoo/PPC profile directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/powerpc/ChangeLog,v 1.321 2015/04/18 11:09:14 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/powerpc/ChangeLog,v 1.326 2015/05/11 01:37:50 pesa Exp $
+
+  11 May 2015; Davide Pesavento <pesa@gentoo.org> package.use.mask,
+  ppc64/package.use.stable.mask:
+  Move entry for dev-qt/qtdemo to ppc64/ as it's needed only there, and only
+  stable mask it.
+
+  10 May 2015; Jeroen Roovers <jer@gentoo.org> package.use.mask,
+  ppc64/64ul/use.mask:
+  Replace package.use.mask entries for USE=opencl with a single use.mask entry.
+
+  08 May 2015; Jeroen Roovers <jer@gentoo.org> ppc64/package.use.mask:
+  Drop USE=rubberband mask for media-video/mpv (bug #548446).
+
+  28 Apr 2015; Patrick Lauer <patrick@gentoo.org> use.mask:
+  Mask ayatana useflag until dependencies catch up
+
+  26 Apr 2015; Jeroen Roovers <jer@gentoo.org> ppc64/package.use.mask:
+  Mask USE=lxpanel for xfce-extra/xfce4-power-manager (bug #520296).
 
   18 Apr 2015; Markos Chandras <hwoarang@gentoo.org> package.use.mask:
   Mask samba useflag for sys-auth/sssd

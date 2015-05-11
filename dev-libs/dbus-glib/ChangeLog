@@ -1,6 +1,15 @@
 # ChangeLog for dev-libs/dbus-glib
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/dbus-glib/ChangeLog,v 1.160 2015/04/19 09:49:09 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/dbus-glib/ChangeLog,v 1.163 2015/04/30 04:37:51 jer Exp $
+
+  30 Apr 2015; Jeroen Roovers <jer@gentoo.org> dbus-glib-0.102.ebuild:
+  Stable for PPC64 (bug #545844).
+
+  28 Apr 2015; Agostino Sarubbo <ago@gentoo.org> dbus-glib-0.102.ebuild:
+  Stable for sparc, wrt bug #545844
+
+  21 Apr 2015; Pacho Ramos <pacho@gentoo.org> dbus-glib-0.102.ebuild:
+  ppc stable wrt bug #545844
 
   19 Apr 2015; Agostino Sarubbo <ago@gentoo.org> dbus-glib-0.102.ebuild:
   Stable for x86, wrt bug #545844

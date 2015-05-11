@@ -1,6 +1,13 @@
 # ChangeLog for sys-power/upower
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/upower/ChangeLog,v 1.175 2015/04/18 10:05:31 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/upower/ChangeLog,v 1.177 2015/04/28 09:47:22 ago Exp $
+
+  28 Apr 2015; Agostino Sarubbo <ago@gentoo.org> upower-0.99.2-r1.ebuild:
+  Stable for sparc, wrt bug #537878
+
+  21 Apr 2015; Mart Raudsepp <leio@gentoo.org> upower-0.99.2.ebuild,
+  upower-0.99.2-r1.ebuild:
+  Fix glib version requirement
 
   18 Apr 2015; Pacho Ramos <pacho@gentoo.org> upower-0.99.2-r1.ebuild:
   x86 stable wrt bug #537878

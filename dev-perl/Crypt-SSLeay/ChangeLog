@@ -1,6 +1,16 @@
 # ChangeLog for dev-perl/Crypt-SSLeay
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Crypt-SSLeay/ChangeLog,v 1.87 2014/02/01 23:36:12 vapier Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Crypt-SSLeay/ChangeLog,v 1.89 2015/05/03 17:39:20 dilfridge Exp $
+
+  03 May 2015; Andreas K. Huettel <dilfridge@gentoo.org>
+  Crypt-SSLeay-0.720.0.ebuild:
+  Make dependency on Try::Tiny unconditional, bug 548500
+
+*Crypt-SSLeay-0.720.0 (02 May 2015)
+
+  02 May 2015; Andreas K. Huettel <dilfridge@gentoo.org>
+  Crypt-SSLeay-0.640.0.ebuild, +Crypt-SSLeay-0.720.0.ebuild:
+  Version bump
 
   01 Feb 2014; Mike Frysinger <vapier@gentoo.org> Crypt-SSLeay-0.640.0.ebuild:
   Mark arm64/m68k/s390/sh stable.

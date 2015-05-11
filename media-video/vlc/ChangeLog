@@ -1,6 +1,42 @@
 # ChangeLog for media-video/vlc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/ChangeLog,v 1.949 2015/04/20 05:28:35 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/ChangeLog,v 1.957 2015/05/08 09:19:25 ago Exp $
+
+  08 May 2015; Agostino Sarubbo <ago@gentoo.org> -vlc-2.1.2.ebuild:
+  Drop 2.1.2 and on behalf of the alpha team, we are dropping the support on vlc
+  for alpha
+
+  02 May 2015; Ian Delaney <idella4@gentoo.org> vlc-2.2.0.ebuild,
+  vlc-2.2.1.ebuild:
+  reset configure options to cater to either qt4 or qt5, fixes bug #548360 by
+  Toralf Förster
+
+  01 May 2015; Jeroen Roovers <jer@gentoo.org> vlc-2.2.1.ebuild:
+  Marked ~ppc64 (bug #489436).
+
+  30 Apr 2015; Ian Delaney <idella4@gentoo.org> +files/qt4-select.patch,
+  vlc-2.2.0.ebuild, vlc-2.2.1.ebuild:
+  add patch to address selection of qt4 vs qt5, patch by Karol Herbst, comment
+  19, bug #541678, tested and endorsed by users and proxy maintainer, limited to
+  versioned ebuilds for now, finally closes said bug
+
+  24 Apr 2015; Ian Delaney <idella4@gentoo.org> vlc-2.2.0.ebuild,
+  vlc-2.2.1.ebuild, vlc-2.2.9999.ebuild, vlc-9999.ebuild:
+  update ffmpeg to version 2.2 to behind pertinent use flags wrt bug #541678,
+  confirmed by proxy maintainer
+
+  22 Apr 2015; Ian Delaney <idella4@gentoo.org> vlc-2.2.9999.ebuild,
+  vlc-9999.ebuild:
+  add update of subslot to these ebuilds
+
+  21 Apr 2015; Ian Delaney <idella4@gentoo.org> vlc-2.2.0.ebuild,
+  vlc-2.2.1.ebuild:
+  update subslot to 5-8 in versioned ebuilds -2.2*, noted by floppym, fixes bug
+  #547232 by him, discussed with proxy maintainer
+
+  20 Apr 2015; Mike Gilbert <floppym@gentoo.org> vlc-2.2.1.ebuild,
+  vlc-9999.ebuild:
+  Drop glx flag here as well.
 
   20 Apr 2015; Ian Delaney <idella4@gentoo.org> vlc-2.2.0.ebuild,
   vlc-2.2.9999.ebuild:

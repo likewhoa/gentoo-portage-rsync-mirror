@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.664 2015/04/20 09:04:09 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.668 2015/05/11 03:05:21 vapier Exp $
 
 # Maintainer: Toolchain Ninjas <toolchain@gentoo.org>
 
@@ -184,7 +184,7 @@ tc_version_is_at_least 4.5 && RDEPEND+=" >=dev-libs/mpc-0.8.1"
 
 if in_iuse graphite ; then
 	if tc_version_is_at_least 5.0 ; then
-		RDEPEND+=" graphite? ( >=dev-libs/isl-0.12 )"
+		RDEPEND+=" graphite? ( >=dev-libs/isl-0.14 )"
 	elif tc_version_is_at_least 4.8 ; then
 		RDEPEND+="
 			graphite? (
@@ -1784,7 +1784,7 @@ gcc_movelibs() {
 			if [[ ${FROMDIR} != "${TODIR}" && -d ${FROMDIR} ]] ; then
 				local files=$(find "${FROMDIR}" -maxdepth 1 ! -type d 2>/dev/null)
 				if [[ -n ${files} ]] ; then
-					mv ${files} "${TODIR}"
+					mv ${files} "${TODIR}" || die
 				fi
 			fi
 		done
@@ -1794,7 +1794,7 @@ gcc_movelibs() {
 		FROMDIR="${PREFIX}/lib/${OS_MULTIDIR}"
 		for x in "${D}${FROMDIR}"/pkgconfig/libgcj*.pc ; do
 			[[ -f ${x} ]] || continue
-			sed -i "/^libdir=/s:=.*:=${LIBPATH}/${MULTIDIR}:" "${x}"
+			sed -i "/^libdir=/s:=.*:=${LIBPATH}/${MULTIDIR}:" "${x}" || die
 			mv "${x}" "${D}${FROMDIR}"/pkgconfig/libgcj-${GCC_PV}.pc || die
 		done
 	done
@@ -1821,13 +1821,13 @@ fix_libtool_libdir_paths() {
 	allarchives="\(${allarchives// /\\|}\)"
 	popd >/dev/null
 
-	sed -i \
-		-e "/^libdir=/s:=.*:='${dir}':" \
-		./${dir}/*.la
+	# The libdir might not have any .la files. #548782
+	find "./${dir}" -maxdepth 1 -name '*.la' \
+		-exec sed -i -e "/^libdir=/s:=.*:='${dir}':" {} + || die
 	sed -i \
 		-e "/^dependency_libs=/s:/[^ ]*/${allarchives}:${LIBPATH}/\1:g" \
 		$(find ./${PREFIX}/lib* -maxdepth 3 -name '*.la') \
-		./${dir}/*.la
+		$(find ./${dir}/ -maxdepth 1 -name '*.la') || die
 
 	popd >/dev/null
 }

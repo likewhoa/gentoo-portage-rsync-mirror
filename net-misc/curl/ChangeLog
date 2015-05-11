@@ -1,6 +1,64 @@
 # ChangeLog for net-misc/curl
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/ChangeLog,v 1.391 2015/03/04 14:44:59 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/ChangeLog,v 1.408 2015/05/04 10:06:39 ago Exp $
+
+  04 May 2015; Agostino Sarubbo <ago@gentoo.org> curl-7.42.1.ebuild:
+  Stable for amd64, wrt bug #548130
+
+  03 May 2015; Jeroen Roovers <jer@gentoo.org> curl-7.42.1.ebuild:
+  Stable for HPPA (bug #548130).
+
+  02 May 2015; Anthony G. Basile <blueness@gentoo.org> curl-7.42.1.ebuild:
+  Stable on arm, ppc and ppc64.  Bug #548130.
+
+*curl-7.42.1 (29 Apr 2015)
+
+  29 Apr 2015; Anthony G. Basile <blueness@gentoo.org> +curl-7.42.1.ebuild:
+  Version bump.
+
+  29 Apr 2015; Agostino Sarubbo <ago@gentoo.org> curl-7.42.0.ebuild:
+  Stable for sparc, wrt bug #547376
+
+  28 Apr 2015; Agostino Sarubbo <ago@gentoo.org> curl-7.42.0.ebuild:
+  Stable for ia64, wrt bug #547376
+
+  28 Apr 2015; Agostino Sarubbo <ago@gentoo.org> curl-7.42.0.ebuild:
+  Stable for alpha, wrt bug #547376
+
+  26 Apr 2015; Anthony G. Basile <blueness@gentoo.org> curl-7.42.0.ebuild:
+  Stable for arm.  Bug #547376.
+
+  25 Apr 2015; Anthony G. Basile <blueness@gentoo.org> curl-7.42.0.ebuild:
+  Stable for ppc.  Bug #547376.
+
+  23 Apr 2015; Agostino Sarubbo <ago@gentoo.org> curl-7.42.0.ebuild:
+  Stable for x86, wrt bug #547376
+
+  23 Apr 2015; Agostino Sarubbo <ago@gentoo.org> curl-7.42.0.ebuild:
+  Stable for amd64, wrt bug #547376
+
+  22 Apr 2015; Jeroen Roovers <jer@gentoo.org> curl-7.42.0.ebuild:
+  Stable for HPPA (bug #547376).
+
+  22 Apr 2015; Jeroen Roovers <jer@gentoo.org> curl-7.42.0.ebuild:
+  Stable for PPC64 (bug #547376).
+
+  22 Apr 2015; Anthony G. Basile <blueness@gentoo.org>
+  -files/curl-7.30.0-configure.patch, -files/curl-7.35.0-tests.patch,
+  -files/curl-7.36.0-hostcheck.patch, -files/curl-7.37.0-host-krb5-config.patch:
+  Remove old patches.
+
+  22 Apr 2015; Anthony G. Basile <blueness@gentoo.org> ChangeLog:
+  Fix gpg signature.
+
+  22 Apr 2015; Anthony G. Basile <blueness@gentoo.org> -curl-7.40.0.ebuild,
+  -curl-7.41.0.ebuild:
+  Remove vulnerable unstable versions.
+
+*curl-7.42.0 (22 Apr 2015)
+
+  22 Apr 2015; Anthony G. Basile <blueness@gentoo.org> +curl-7.42.0.ebuild:
+  Version bump.  Security bug #547376.
 
   04 Mar 2015; Anthony G. Basile <blueness@gentoo.org> curl-7.41.0.ebuild:
   ca-bundle and ca-path are no longer mutually exclusive.  Bug #539260.

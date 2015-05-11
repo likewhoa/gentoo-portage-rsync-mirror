@@ -1,6 +1,29 @@
 # ChangeLog for sys-apps/openrc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/ChangeLog,v 1.336 2015/02/26 18:59:35 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/ChangeLog,v 1.341 2015/05/06 15:52:59 williamh Exp $
+
+*openrc-0.15.1 (06 May 2015)
+
+  06 May 2015; William Hubbs <williamh@gentoo.org> +openrc-0.15.1.ebuild:
+  version bump for #537304
+
+*openrc-0.15 (01 May 2015)
+
+  01 May 2015; William Hubbs <williamh@gentoo.org> +openrc-0.15.ebuild:
+  Version bump for systemd-nspawn support
+
+*openrc-0.14 (26 Apr 2015)
+
+  26 Apr 2015; William Hubbs <williamh@gentoo.org> +openrc-0.14.ebuild,
+  openrc-9999.ebuild:
+  version bump and sync live ebuild
+
+  25 Apr 2015; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  Add binfmt automatically to the boot runlevel when upgrading from <0.14
+
+  22 Apr 2015; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  Most upstream documentation is now in markdown, so adjust the ebuild to
+  install it.
 
   26 Feb 2015; William Hubbs <williamh@gentoo.org> openrc-0.13.11.ebuild,
   openrc-9999.ebuild:

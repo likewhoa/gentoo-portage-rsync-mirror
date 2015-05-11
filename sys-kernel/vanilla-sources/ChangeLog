@@ -1,6 +1,54 @@
 # ChangeLog for sys-kernel/vanilla-sources
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.1371 2015/04/19 08:44:13 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.1377 2015/05/07 10:06:03 mpagano Exp $
+
+*vanilla-sources-3.19.7 (07 May 2015)
+
+  07 May 2015; Mike Pagano <mpagano@gentoo.org> +vanilla-sources-3.19.7.ebuild:
+  Version bump
+
+*vanilla-sources-4.0.2 (06 May 2015)
+*vanilla-sources-3.18.13 (06 May 2015)
+*vanilla-sources-3.14.41 (06 May 2015)
+*vanilla-sources-3.10.77 (06 May 2015)
+
+  06 May 2015; Mike Pagano <mpagano@gentoo.org>
+  -vanilla-sources-3.10.76.ebuild, +vanilla-sources-3.10.77.ebuild,
+  -vanilla-sources-3.14.40.ebuild, +vanilla-sources-3.14.41.ebuild,
+  -vanilla-sources-3.18.12.ebuild, +vanilla-sources-3.18.13.ebuild,
+  -vanilla-sources-3.19.6.ebuild, -vanilla-sources-4.0.1.ebuild,
+  +vanilla-sources-4.0.2.ebuild:
+  Version bumps. Remove old.
+
+*vanilla-sources-3.12.42 (04 May 2015)
+
+  04 May 2015; Mike Pagano <mpagano@gentoo.org>
+  -vanilla-sources-3.12.41.ebuild, +vanilla-sources-3.12.42.ebuild:
+  Version bump. Remove old.
+
+*vanilla-sources-3.12.41 (30 Apr 2015)
+
+  30 Apr 2015; Mike Pagano <mpagano@gentoo.org>
+  -vanilla-sources-3.12.40.ebuild, +vanilla-sources-3.12.41.ebuild:
+  Version bump. Remove old.
+
+*vanilla-sources-3.19.6 (29 Apr 2015)
+*vanilla-sources-3.14.40 (29 Apr 2015)
+*vanilla-sources-3.10.76 (29 Apr 2015)
+*vanilla-sources-4.0.1 (29 Apr 2015)
+
+  29 Apr 2015; Agostino Sarubbo <ago@gentoo.org>
+  +vanilla-sources-3.10.76.ebuild, +vanilla-sources-3.14.40.ebuild,
+  +vanilla-sources-3.19.6.ebuild, +vanilla-sources-4.0.1.ebuild,
+  -vanilla-sources-3.10.75.ebuild, -vanilla-sources-3.14.39.ebuild,
+  -vanilla-sources-3.19.5.ebuild, -vanilla-sources-4.0.0.ebuild:
+  Automated version bump to {3.10.76,3.14.40,3.19.6,4.0.1} - remove old.
+
+*vanilla-sources-3.18.12 (22 Apr 2015)
+
+  22 Apr 2015; Mike Pagano <mpagano@gentoo.org>
+  -vanilla-sources-3.18.11.ebuild, +vanilla-sources-3.18.12.ebuild:
+  Version bump. Remove old.
 
 *vanilla-sources-3.14.39 (19 Apr 2015)
 *vanilla-sources-3.19.5 (19 Apr 2015)

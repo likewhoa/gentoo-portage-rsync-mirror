@@ -1,6 +1,19 @@
 # ChangeLog for app-eselect/eselect-php
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-eselect/eselect-php/ChangeLog,v 1.4 2015/04/19 08:56:26 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-eselect/eselect-php/ChangeLog,v 1.8 2015/04/26 16:51:39 pacho Exp $
+
+  26 Apr 2015; Pacho Ramos <pacho@gentoo.org> eselect-php-0.7.1-r4.ebuild:
+  ppc stable wrt bug #545664
+
+  25 Apr 2015; Jeroen Roovers <jer@gentoo.org> eselect-php-0.7.1-r4.ebuild:
+  Stable for PPC64 (bug #545664).
+
+  22 Apr 2015; Sergey Popov <pinkbyte@gentoo.org> eselect-php-0.6.2.ebuild,
+  eselect-php-0.7.1.ebuild:
+  Drop s390 and sh keywords to unstable, wrt bug #545664
+
+  21 Apr 2015; Pacho Ramos <pacho@gentoo.org> eselect-php-0.7.1-r4.ebuild:
+  x86 stable wrt bug #545664
 
   19 Apr 2015; Agostino Sarubbo <ago@gentoo.org> eselect-php-0.7.1-r4.ebuild:
   Stable for amd64, wrt bug #545664

@@ -1,6 +1,97 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1590 2015/04/19 18:22:15 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1613 2015/05/10 15:24:30 pesa Exp $
+
+  10 May 2015; Davide Pesavento <pesa@gentoo.org> qmake-utils.eclass:
+  Don't prepend EPREFIX for {header,mkspecs}dir since these are mostly used
+  with insinto and friends.
+
+  10 May 2015; Davide Pesavento <pesa@gentoo.org> qmake-utils.eclass:
+  Add qt{4,5}_get_{header,mkspecs}dir helper functions, bug 525830.
+
+  10 May 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Delete obsolete code that is now causing problems on freebsd (bug 493310).
+
+  09 May 2015; James Le Cuirot <chewi@gentoo.org> java-utils-2.eclass,
+  java-virtuals-2.eclass, java-vm-2.eclass:
+  Bump everyone to java-config 2.2.
+
+  09 May 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  graphite support was dropped from gcc-4.7
+
+  09 May 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Move workaround for bug 367045 from qtgui ebuild to eclass.
+
+  09 May 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Update from qt overlay: overhaul toolchain and *FLAGS handling for proper
+  multilib support during the configure phase. Fixes bug #545106.
+
+  09 May 2015; Manuel Rüger <mrueg@gentoo.org> kde5.eclass:
+  Sync with overlay.
+
+  09 May 2015; Manuel Rüger <mrueg@gentoo.org> kde5-functions.eclass:
+  Sync with overlay.
+
+  09 May 2015; Manuel Rüger <mrueg@gentoo.org> kde5.eclass:
+  Sync with overlay.
+
+  09 May 2015; Ulrich Müller <ulm@gentoo.org>
+  -tests/autotools:eaclocal_amflags.sh, +tests/autotools_eaclocal_amflags.sh,
+  -tests/eutils:eshopts.sh, +tests/eutils_eshopts.sh, -tests/eutils:estack.sh,
+  +tests/eutils_estack.sh, -tests/eutils:evar.sh, +tests/eutils_evar.sh,
+  -tests/eutils:path_exists.sh, +tests/eutils_path_exists.sh,
+  -tests/git-r3:GIT_DIR.sh, +tests/git-r3_GIT_DIR.sh,
+  -tests/git-r3:subrepos.sh, +tests/git-r3_subrepos.sh,
+  -tests/linux-info:get_running_version.sh,
+  +tests/linux-info_get_running_version.sh,
+  -tests/multiprocessing:makeopts_jobs.sh,
+  +tests/multiprocessing_makeopts_jobs.sh,
+  -tests/versionator:version_compare.sh, +tests/versionator_version_compare.sh:
+  Avoid problematic colon char in filenames, bug 548750.
+
+  04 May 2015; <grknight@gentoo.org> php-ext-source-r2.eclass:
+  Fix documentation of 3 variables in php-ext-source-r2 eclass
+
+  04 May 2015; <grknight@gentoo.org> php-ext-source-r2.eclass:
+  Make USE_PHP a REQUIRED variable for the php-ext-source-r2 eclass
+
+  02 May 2015; James Le Cuirot <chewi@gentoo.org> java-utils-2.eclass:
+  Make java-pkg_doso always install with mode 0755, which is more like
+  dolib.so. Closes bug #225729.
+
+  01 May 2015; <grknight@gentoo.org> mysql.eclass, mysql-multilib.eclass,
+  mysql-v2.eclass:
+  Update git urls for mysql-extras
+
+  29 Apr 2015; Mike Pagano <mpagano@gentoo.org> kernel-2.eclass:
+  Add kernel-2 env var K_BASE_VER as different versions of git sources use
+  different base versions.
+
+  28 Apr 2015; James Le Cuirot <chewi@gentoo.org> java-pkg-2.eclass,
+  java-utils-2.eclass, ant-tasks.eclass:
+  Skip java-dep-check for ant tasks wrt bug #298955. Fix missing ant-core
+  dependency SLOT. Fix recording of BUILD_DEPEND. Fix java-pkg_ensure-dep
+  matching and adjust the error message. Fix automatic loading of ant-junit and
+  junit wrt bug #513522 among others.
+
+  28 Apr 2015; Michael Palimaka <kensington@gentoo.org> kde4-base.eclass:
+  Update SRC_URI.
+
+  27 Apr 2015; Mike Pagano <mpagano@gentoo.org> kernel-2.eclass:
+  Handle 4.1 base kernel. See bug #547894.
+
+  25 Apr 2015; Lars Wendler <polynomial-c@gentoo.org> mozconfig-v5.36.eclass:
+  Adjusted libvpx dependency.
+
+  24 Apr 2015; Ulrich Müller <ulm@gentoo.org> elisp-common.eclass:
+  Fix filename matching in elisp-site-file-install. It should use shortest
+  match, not longest.
+
+  22 Apr 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Sync with qt overlay: cleanup prefix-related patching and fix bug #542780.
+
+  21 Apr 2015; Jason Zaman <perfinion@gentoo.org> selinux-policy-2.eclass:
+  update git urls and migrate git-2 -> git-r3
 
   19 Apr 2015; Michael Palimaka <kensington@gentoo.org> qt5-build.eclass:
   Sync with qt overlay - export AR and OBJDUMP too, use new configure option
@@ -35,7 +126,7 @@
   accidentally enabled in a previous revision). Fixes bug #545174 by Toralf
   Förster.
 
-  04 Apr 2015; <jason@gentoo.org> selinux-policy-2.eclass:
+  04 Apr 2015; Jason Zaman <perfinion@gentoo.org> selinux-policy-2.eclass:
   Drop EAPI<5 from selinux-policy-2.eclass
 
   01 Apr 2015; Davide Pesavento <pesa@gentoo.org> qt4-build.eclass,

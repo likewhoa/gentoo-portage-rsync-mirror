@@ -1,6 +1,27 @@
 # ChangeLog for app-emulation/docker
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/docker/ChangeLog,v 1.41 2015/03/14 02:47:43 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/docker/ChangeLog,v 1.46 2015/05/08 17:27:58 xarthisius Exp $
+
+  08 May 2015; Kacper Kowalik <xarthisius@gentoo.org> -docker-1.5.0.ebuild:
+  drop old wrt #548884
+
+*docker-1.6.1 (08 May 2015)
+
+  08 May 2015; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.6.1.ebuild,
+  -docker-1.6.0.ebuild:
+  Version bump, drop old wrt #548884
+
+  04 May 2015; Justin Lecher <jlec@gentoo.org> docker-1.6.0.ebuild:
+  Add missing dependency on aufs4, thanks jbergstroem for the report
+
+  29 Apr 2015; Kacper Kowalik <xarthisius@gentoo.org> docker-1.6.0.ebuild:
+  Drop ~CFS_BANDWIDTH as it's not yet used by 1.6.0, add warning message for
+  CONFIG_MEMCG_SWAP_ENABLED. Thanks to Thomas Capricelli for the report
+
+*docker-1.6.0 (28 Apr 2015)
+
+  28 Apr 2015; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.6.0.ebuild:
+  Version bump, grabbed from tianon's docker overlay. Fixes #547316
 
   14 Mar 2015; Kacper Kowalik <xarthisius@gentoo.org> docker-1.5.0.ebuild:
   Check if CPUSETS are enabled in kernel wrt bug #536546 by Dirk Best <mail

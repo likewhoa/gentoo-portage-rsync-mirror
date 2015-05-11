@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.2.1.ebuild,v 1.1 2015/04/19 06:30:22 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.2.1.ebuild,v 1.7 2015/05/02 06:28:37 idella4 Exp $
 
 EAPI="5"
 
@@ -32,12 +32,12 @@ else
 fi
 
 LICENSE="LGPL-2.1 GPL-2"
-SLOT="0/5-7" # vlc - vlccore
+SLOT="0/5-8" # vlc - vlccore
 
 if [ "${PV%9999}" = "${PV}" ] ; then
-	KEYWORDS="~amd64 ~arm -sparc ~x86 ~x86-fbsd"
+	KEYWORDS="~amd64 ~arm ~ppc64 -sparc ~x86 ~x86-fbsd"
 else
-	KEYWORDS=""
+	KEYWORDS="~ppc64"
 fi
 
 IUSE="a52 aalib alsa altivec atmo +audioqueue avahi +avcodec
@@ -119,7 +119,7 @@ RDEPEND="
 		opus? ( >=media-libs/opus-1.0.3:0 )
 		png? ( media-libs/libpng:0= sys-libs/zlib:0 )
 		postproc? (
-			!libav? ( >=media-video/ffmpeg-1.2:0= )
+			!libav? ( >=media-video/ffmpeg-2.2:0= )
 			libav? ( media-libs/libpostproc:0= )
 		)
 		projectm? ( media-libs/libprojectm:0 media-fonts/dejavu:0 )
@@ -162,7 +162,7 @@ RDEPEND="
 RDEPEND="${RDEPEND}
 		vdpau? (
 			>=x11-libs/libvdpau-0.6:0
-			!libav? ( >=media-video/ffmpeg-1.2:0= )
+			!libav? ( >=media-video/ffmpeg-2.2:0= )
 			libav? ( >=media-video/libav-10:0= )
 		)
 		vnc? ( >=net-libs/libvncserver-0.9.9:0 )
@@ -264,6 +264,9 @@ src_prepare() {
 	# Fix up broken audio when skipping using a fixed reversed bisected commit.
 	epatch "${FILESDIR}"/${PN}-2.1.0-TomWij-bisected-PA-broken-underflow.patch
 
+	# Bug #541678
+	epatch "${FILESDIR}"/qt4-select.patch
+
 	# Don't use --started-from-file when not using dbus.
 	if ! use dbus ; then
 		sed -i 's/ --started-from-file//' share/vlc.desktop.in || die
@@ -306,8 +309,10 @@ src_configure() {
 	fi
 
 	local qt_flag=""
-	if use qt4 || use qt5 ; then
-		qt_flag="--enable-qt"
+	if use qt4 ; then
+		qt_flag="--enable-qt=4"
+	elif use qt5 ; then
+		qt_flag="--enable-qt=5"
 	fi
 
 	econf \
@@ -386,7 +391,7 @@ src_configure() {
 		$(use_enable omxil) \
 		$(use_enable omxil omxil-vout) \
 		$(use_enable opencv) \
-		$(use_enable opengl glx) $(use_enable opengl glspectrum) \
+		$(use_enable opengl glspectrum) \
 		$(use_enable opus) \
 		$(use_enable optimisememory optimize-memory) \
 		$(use_enable png) \

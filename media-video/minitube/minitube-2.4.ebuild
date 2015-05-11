@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/minitube/minitube-2.4.ebuild,v 1.1 2015/04/19 08:58:32 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/minitube/minitube-2.4.ebuild,v 1.4 2015/05/10 13:05:17 pesa Exp $
 
 EAPI=5
 PLOCALES="ar ca ca_ES da de_DE el en es es_AR es_ES fi fi_FI fr he_IL hr hu
@@ -22,6 +22,7 @@ IUSE="debug download gstreamer kde"
 DEPEND=">=dev-qt/qtgui-4.8:4[accessibility]
 	>=dev-qt/qtdbus-4.8:4
 	>=dev-qt/qtsql-4.8:4
+	dev-qt/qtsingleapplication[qt4(+),X]
 	kde? ( || ( media-libs/phonon[gstreamer?,qt4] >=dev-qt/qtphonon-4.8:4 ) )
 	!kde? ( || ( >=dev-qt/qtphonon-4.8:4 media-libs/phonon[gstreamer?,qt4] ) )
 	gstreamer? (
@@ -31,14 +32,13 @@ DEPEND=">=dev-qt/qtgui-4.8:4[accessibility]
 		media-plugins/gst-plugins-faad:0.10
 		media-plugins/gst-plugins-theora
 	)
-	dev-qt/qtsingleapplication[X]
 "
 RDEPEND="${DEPEND}"
 
 DOCS="AUTHORS CHANGES TODO"
 
 #455976
-PATCHES=( "${FILESDIR}"/${PN}-2.1.3-disable-updates.patch )
+PATCHES=( "${FILESDIR}"/${P}-disable-updates.patch )
 
 pkg_pretend() {
 	if [[ -z ${MINITUBE_GOOGLE_API_KEY} ]]; then
@@ -48,7 +48,7 @@ pkg_pretend() {
 		eerror "https://console.developers.google.com/ and"
 		eerror "https://github.com/flaviotordini/minitube/blob/master/README.md"
 		eerror "for more information. Once you have generated your key,"
-		eerror "please export to to your environment ie :"
+		eerror "please export it to your environment ie :"
 		eerror "'export MINITUBE_GOOGLE_API_KEY=\"YourAPIKeyHere\""
 		eerror "and then try to merge this package again"
 		eerror ""

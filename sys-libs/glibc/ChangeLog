@@ -1,6 +1,29 @@
 # ChangeLog for sys-libs/glibc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/ChangeLog,v 1.1043 2015/03/22 20:38:54 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/ChangeLog,v 1.1051 2015/05/04 03:03:19 vapier Exp $
+
+  04 May 2015; Mike Frysinger <vapier@gentoo.org> glibc-2.20-r2.ebuild:
+  Mark arm64/ia64/m68k/s390/sh stable #544034.
+
+  27 Apr 2015; Mike Frysinger <vapier@gentoo.org> glibc-2.20-r2.ebuild,
+  glibc-2.21.ebuild:
+  Reject gcc-4.8.[0-3] and gcc-4.9.0 due to miscompilation bugs #547420 by Marc
+  Burkhardt.
+
+  24 Apr 2015; Mikle Kolyada <zlogene@gentoo.org> glibc-2.20-r2.ebuild:
+  sparc stable wrt bug #544034
+
+  23 Apr 2015; Jeroen Roovers <jer@gentoo.org> glibc-2.20-r2.ebuild:
+  Stable for PPC64 (bug #544034).
+
+  22 Apr 2015; Mikle Kolyada <zlogene@gentoo.org> glibc-2.20-r2.ebuild:
+  arm stable wrt bug #544034
+
+  21 Apr 2015; Pacho Ramos <pacho@gentoo.org> glibc-2.20-r2.ebuild:
+  ppc stable wrt bug #544034
+
+  21 Apr 2015; Pacho Ramos <pacho@gentoo.org> glibc-2.20-r2.ebuild:
+  x86 stable wrt bug #544034
 
   22 Mar 2015; Mikle Kolyada <zlogene@gentoo.org> glibc-2.20-r2.ebuild:
   amd64 stable wrt bug #544034

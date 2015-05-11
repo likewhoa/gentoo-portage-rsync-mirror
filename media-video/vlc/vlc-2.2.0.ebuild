@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.2.0.ebuild,v 1.8 2015/04/20 05:28:35 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.2.0.ebuild,v 1.12 2015/05/02 06:28:37 idella4 Exp $
 
 EAPI="5"
 
@@ -32,7 +32,7 @@ else
 fi
 
 LICENSE="LGPL-2.1 GPL-2"
-SLOT="0/5-7" # vlc - vlccore
+SLOT="0/5-8" # vlc - vlccore
 
 if [ "${PV%9999}" = "${PV}" ] ; then
 	KEYWORDS="~amd64 ~arm -sparc ~x86 ~x86-fbsd"
@@ -119,7 +119,7 @@ RDEPEND="
 		opus? ( >=media-libs/opus-1.0.3:0 )
 		png? ( media-libs/libpng:0= sys-libs/zlib:0 )
 		postproc? (
-			!libav? ( >=media-video/ffmpeg-1.2:0= )
+			!libav? ( >=media-video/ffmpeg-2.2:0= )
 			libav? ( media-libs/libpostproc:0= )
 		)
 		projectm? ( media-libs/libprojectm:0 media-fonts/dejavu:0 )
@@ -162,7 +162,7 @@ RDEPEND="
 RDEPEND="${RDEPEND}
 		vdpau? (
 			>=x11-libs/libvdpau-0.6:0
-			!libav? ( >=media-video/ffmpeg-1.2:0= )
+			!libav? ( >=media-video/ffmpeg-2.2:0= )
 			libav? ( >=media-video/libav-10:0= )
 		)
 		vnc? ( >=net-libs/libvncserver-0.9.9:0 )
@@ -261,6 +261,9 @@ src_prepare() {
 	# Bug #541928
 	epatch "${FILESDIR}"/${P}-fix-xcb.patch
 
+	# Bug #541678
+	epatch "${FILESDIR}"/qt4-select.patch
+
 	# Don't use --started-from-file when not using dbus.
 	if ! use dbus ; then
 		sed -i 's/ --started-from-file//' share/vlc.desktop.in || die
@@ -303,8 +306,10 @@ src_configure() {
 	fi
 
 	local qt_flag=""
-	if use qt4 || use qt5 ; then
-		qt_flag="--enable-qt"
+	if use qt4 ; then
+		qt_flag="--enable-qt=4"
+	elif use qt5 ; then
+		qt_flag="--enable-qt=5"
 	fi
 
 	econf \

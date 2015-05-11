@@ -1,6 +1,18 @@
 # ChangeLog for app-crypt/pinentry
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/pinentry/ChangeLog,v 1.167 2015/03/31 17:18:11 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/pinentry/ChangeLog,v 1.170 2015/05/05 16:24:05 alonbl Exp $
+
+  05 May 2015; Alon Bar-Lev <alonbl@gentoo.org> pinentry-0.9.1.ebuild:
+  Remove aix hack as upstream addressed the issue
+
+*pinentry-0.9.1 (03 May 2015)
+
+  03 May 2015; Alon Bar-Lev <alonbl@gentoo.org>
+  +files/pinentry-0.9.1-memleak.patch, +pinentry-0.9.1.ebuild:
+  Version bump, bug#548456
+
+  30 Apr 2015; Alon Bar-Lev <alonbl@gentoo.org> pinentry-0.9.0-r3.ebuild:
+  Fix gcc-5 qt issue, bug#547528, thanks to Mark Wright
 
   31 Mar 2015; Ulrich Müller <ulm@gentoo.org> pinentry-0.9.0.ebuild,
   pinentry-0.9.0-r1.ebuild, pinentry-0.9.0-r2.ebuild, pinentry-0.9.0-r3.ebuild:

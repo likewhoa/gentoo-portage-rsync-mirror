@@ -1,6 +1,17 @@
 # ChangeLog for media-video/minitube
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/minitube/ChangeLog,v 1.101 2015/04/19 08:58:32 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/minitube/ChangeLog,v 1.104 2015/05/10 13:05:17 pesa Exp $
+
+  10 May 2015; Davide Pesavento <pesa@gentoo.org> minitube-2.3-r1.ebuild,
+  minitube-2.4.ebuild:
+  Add missing usedep for qtsingleapplication.
+
+  26 Apr 2015; Markos Chandras <hwoarang@gentoo.org>
+  +files/minitube-2.4-disable-updates.patch, minitube-2.4.ebuild:
+  Update disable-updates patch for 2.4. Bug #547756
+
+  23 Apr 2015; Markos Chandras <hwoarang@gentoo.org> minitube-2.4.ebuild:
+  typo
 
 *minitube-2.4 (19 Apr 2015)
 

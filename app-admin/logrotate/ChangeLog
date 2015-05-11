@@ -1,6 +1,18 @@
 # ChangeLog for app-admin/logrotate
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/logrotate/ChangeLog,v 1.196 2015/04/19 09:36:46 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/logrotate/ChangeLog,v 1.199 2015/05/01 19:12:55 jer Exp $
+
+  01 May 2015; Jeroen Roovers <jer@gentoo.org> logrotate-3.8.9.ebuild:
+  Stable for PPC64 (bug #545566).
+
+  21 Apr 2015; Pacho Ramos <pacho@gentoo.org> logrotate-3.8.9.ebuild:
+  ppc stable wrt bug #545566
+
+*logrotate-3.8.9-r1 (21 Apr 2015)
+
+  21 Apr 2015; Chema Alonso <nimiux@gentoo.org> +logrotate-3.8.9-r1.ebuild,
+  metadata.xml:
+  Bump to fix bug #485848 and bug #546462
 
   19 Apr 2015; Agostino Sarubbo <ago@gentoo.org> logrotate-3.8.9.ebuild:
   Stable for x86, wrt bug #545566

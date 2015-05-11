@@ -1,6 +1,18 @@
 # ChangeLog for Gentoo base-profile
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/ChangeLog,v 1.790 2015/04/18 23:35:44 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/ChangeLog,v 1.794 2015/05/07 21:22:48 perfinion Exp $
+
+  07 May 2015; Jason Zaman <perfinion@gentoo.org> package.use.mask:
+  mask app-admin/setools[java]
+
+  03 May 2015; Matthias Maier <tamiko@gentoo.org> package.use.mask:
+  mask wireshark-plugins use flag for libvirt-1.2.14
+
+  28 Apr 2015; Patrick Lauer <patrick@gentoo.org> use.stable.mask:
+  Stable-mask ayatana useflag until dependencies catch up
+
+  27 Apr 2015; Michael Palimaka <kensington@gentoo.org> use.mask:
+  Unmask ayatana USE flag.
 
   18 Apr 2015; Mike Frysinger <vapier@gentoo.org> make.defaults:
   Add Nios II (nios2) arch support.

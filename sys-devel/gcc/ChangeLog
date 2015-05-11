@@ -1,6 +1,50 @@
 # ChangeLog for sys-devel/gcc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/ChangeLog,v 1.1062 2015/04/17 10:49:06 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/ChangeLog,v 1.1074 2015/05/11 03:13:06 vapier Exp $
+
+  11 May 2015; Mike Frysinger <vapier@gentoo.org> gcc-4.9.2.ebuild,
+  gcc-5.1.0.ebuild:
+  Add m68k/s390/sh love #536874.
+
+  10 May 2015; Jack Morgan <jmorgan@gentoo.org> gcc-4.7.4.ebuild:
+  sparc stable wrt bug #548802
+
+  08 May 2015; Agostino Sarubbo <ago@gentoo.org> gcc-4.7.4.ebuild:
+  Stable for amd64, wrt bug #548802
+
+  07 May 2015; Anthony G. Basile <blueness@gentoo.org> gcc-4.7.4.ebuild:
+  Stable for ppc and ppc64.  Bug #548802.
+
+  07 May 2015; Mike Frysinger <vapier@gentoo.org> gcc-4.7.4.ebuild:
+  Mark arm/ia64/m68k/s390/sh stable #548802.
+
+  07 May 2015; Jeroen Roovers <jer@gentoo.org> gcc-4.7.4.ebuild:
+  Stable for HPPA (bug #548802).
+
+  05 May 2015; Mike Frysinger <vapier@gentoo.org> gcc-2.95.3-r10.ebuild,
+  gcc-3.3.6-r1.ebuild, gcc-3.4.6-r2.ebuild, gcc-4.0.4.ebuild, gcc-4.1.2.ebuild,
+  gcc-4.2.4-r1.ebuild, gcc-4.3.6-r1.ebuild, gcc-4.4.7.ebuild, gcc-4.5.4.ebuild,
+  gcc-4.6.4.ebuild, gcc-4.7.0.ebuild, gcc-4.7.1.ebuild, gcc-4.7.2-r1.ebuild,
+  gcc-4.8.0.ebuild, gcc-4.8.1-r1.ebuild, gcc-4.8.2.ebuild:
+  Move old ebuilds to EAPI 5.
+
+  04 May 2015; Mike Frysinger <vapier@gentoo.org> gcc-4.8.4.ebuild:
+  Mark arm stable #545124.
+
+  26 Apr 2015; Magnus Granberg <zorry@gentoo.org> gcc-5.1.0.ebuild:
+  Add hardened support to gcc 5.1
+
+*gcc-5.1.0 (23 Apr 2015)
+
+  23 Apr 2015; Mike Frysinger <vapier@gentoo.org> +gcc-5.1.0.ebuild:
+  Version bump #547470.
+
+  23 Apr 2015; Mike Frysinger <vapier@gentoo.org> gcc-4.8.4.ebuild,
+  gcc-4.9.2.ebuild:
+  Fix building with isl-0.13+ #547480.
+
+  23 Apr 2015; Mikle Kolyada <zlogene@gentoo.org> gcc-4.8.4.ebuild:
+  sparc stable wrt bug #545124
 
   17 Apr 2015; Mikle Kolyada <zlogene@gentoo.org> gcc-4.8.4.ebuild:
   x86 stable wrt bug #545124
